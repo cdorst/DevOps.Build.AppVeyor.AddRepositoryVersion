@@ -11,7 +11,10 @@ namespace DevOps.Build.AppVeyor.AddRepositoryVersion
         /// <summary>Adds a table entry to an Azure Table named "appveyor"</summary>
         public static async Task AddRepositoryVersionAsync(string accountName, string repositoryName, string version)
         {
-            var entry = RepositoryVersionTableEntry(accountName, repositoryName, version); var operation = TableOperation.InsertOrReplace(entry); var table = await GetTable(); await table.ExecuteAsync(operation);
+var entry = RepositoryVersionTableEntry(accountName, repositoryName, version);
+var operation = TableOperation.InsertOrReplace(entry);
+var table = await GetTable();
+await table.ExecuteAsync(operation);;
         }
     }
 }
