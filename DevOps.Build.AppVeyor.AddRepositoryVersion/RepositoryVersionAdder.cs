@@ -17,7 +17,7 @@ namespace DevOps.Build.AppVeyor.AddRepositoryVersion
             var entry = RepositoryVersionTableEntry(accountName, repositoryName, version);
             var operation = TableOperation.InsertOrReplace(entry);
             var table = await GetTable();
-            await table.ExecuteAsync(operation);;
+            await table.ExecuteAsync(operation);
         }
     }
 }
